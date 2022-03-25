@@ -1,15 +1,14 @@
 :: IDE
-choco install vscode
-choco install androidstudio
+choco install -y vscode
+choco install -y androidstudio
 :: software
-choco install git
-choco install googlechrome
-choco install python
-choco install nodejs
-choco install composer
-choco install virtualbox
-choco install vagrant
-choco install mysql
+choco install -y git
+choco install -y googlechrome
+choco install -y python
+choco install -y nvm
+choco install -y composer
+choco install -y virtualbox
+choco install -y vagrant
+choco install -y mysql
 :: communication
-choco install line
-choco install wechat
+choco install -y line

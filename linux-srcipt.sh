@@ -15,30 +15,35 @@ install-dev-tools() {
     CI=1
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     brew update
-    export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
     ## NVM
     echo -e "${YELLOW}Install NVM${CLEAR}"
     brew install nvm
-
+    ## Node
+    echo -e "${YELLOW}Install Node${CLEAR}"
+    nvm install node
     ## git
     echo -e "${YELLOW}Install GIT${CLEAR}"
     brew install git
     git config --global user.email "jane991680420@outlook.com"
     git config --global user.name "jane0731"
-
+    ## php
+    echo -e "${YELLOW}Install php${CLEAR}"
+    brew install php
+    ## MQTTX
+    echo -e "${YELLOW}Install MQTTX${CLEAR}"
+    brew install --cask mqttx
     ## VirtualBox
     echo -e "${YELLOW}Install Virtual Box ${CLEAR}"
-    brew install virtualbox virtualbox-extension-pack
-
+    brew install --cask virtualbox
     ## ngrok
     echo -e "${YELLOW}Install ngrok${CLEAR}"
-    brew install ngrok
+    brew install --cask ngrok
 }
 
 install-basic-tools() {
-    ## Google Chrome
+    ## Google Drive
     echo -e "${YELLOW}Install Google Chrome${CLEAR}"
-    brew install google-chrome
+    brew install --cask google-drive
 }
 install-all() {
     echo -e "${GREEN}Starting Install dev-tools !${CLEAR}"
