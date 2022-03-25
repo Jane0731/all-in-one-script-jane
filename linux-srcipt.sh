@@ -14,6 +14,8 @@ install-dev-tools() {
     echo -e "${YELLOW}Install Homebrew${CLEAR}"
     CI=1
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
     brew update
     ## NVM
     echo -e "${YELLOW}Install NVM${CLEAR}"
@@ -29,28 +31,11 @@ install-dev-tools() {
     ## php
     echo -e "${YELLOW}Install php${CLEAR}"
     brew install php
-    ## MQTTX
-    echo -e "${YELLOW}Install MQTTX${CLEAR}"
-    brew install --cask mqttx
-    ## VirtualBox
-    echo -e "${YELLOW}Install Virtual Box ${CLEAR}"
-    brew install --cask virtualbox
-    ## ngrok
-    echo -e "${YELLOW}Install ngrok${CLEAR}"
-    brew install --cask ngrok
 }
 
-install-basic-tools() {
-    ## Google Drive
-    echo -e "${YELLOW}Install Google Chrome${CLEAR}"
-    brew install --cask google-drive
-}
 install-all() {
     echo -e "${GREEN}Starting Install dev-tools !${CLEAR}"
     install-dev-tools
-
-    echo -e "${GREEN}Starting Install basic-tools !${CLEAR}"
-    install-basic-tools
 }
 
 install-all
